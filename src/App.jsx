@@ -16,7 +16,7 @@ const App = () => {
 
   const errorHandler = (error) => {
     console.dir(error)
-    setErrorMessage(error.response.data.message)
+    setErrorMessage(error.response.data.message ?? "An unknown error occurred (Hint to students: It needs to be handled)")
     if (error.response.data.errors) {
       return Promise.reject(error.response.data.errors)
     }
